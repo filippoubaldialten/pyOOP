@@ -1,3 +1,12 @@
+def print_n_buildings():
+    to_print = f"""
+    ***************************************
+    Numero di edifici nel villaggio: {Buildings.n_buildings_in_village}\n
+    ***************************************
+    """
+    print(to_print)
+
+
 class Buildings:
     # variabili di classe, sono variabili con valore comune per tutte le istanze
     working_hrs_per_day = 24
@@ -9,6 +18,8 @@ class Buildings:
         self.x_name = name
         self.x_level = level
         self.x_n_workers = n_workers
+        # tutte le volte che instanzio un edificio incremento il numero di edifici nel villaggio
+        Buildings.n_buildings_in_village += 1
 
     def format_banally_input_values(self):
         sheet = f"""
@@ -16,18 +27,8 @@ class Buildings:
         Building sheet.\n
         Name: {self.x_name}\n
         Level: {self.x_level}\n
-        Workers:{self.x_n_workers}\n
+        Workers: {self.x_n_workers}\n
+        Working hrs per day: {self.working_hrs_per_day}\n
         ************************************************"""
 
         return sheet
-
-#qui viene richiamato il costruttore:
-workshop = Buildings("workshop", 9, 5)
-
-#qui richiamo il metodo per l'istanza e lo stampo
-print(workshop.format_banally_input_values())
-
-#provo in due passaggi, prima richiamo il metodo e poi stampo
-workshop_info = workshop.format_banally_input_values()
-print(workshop_info)
-
