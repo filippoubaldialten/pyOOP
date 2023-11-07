@@ -32,3 +32,9 @@ class Buildings:
         ************************************************"""
 
         return sheet
+
+    def add_level(self):
+        self.x_level += 1
+
+    def subtract_level(self):
+        self.x_level -= 1

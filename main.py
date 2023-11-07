@@ -1,4 +1,6 @@
 import buildings
+import smithy
+import stable
 from buildings import Buildings
 
 #instanzio il workshop
